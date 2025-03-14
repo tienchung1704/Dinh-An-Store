@@ -1,0 +1,25 @@
+.postContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.list-table-format{
+    display: grid;
+    margin-bottom: 20px;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+}
+.list-table-format img{
+    border-radius: 10px;
+}
+.posts{
+    margin-top: 20px;
+}
+
+.postContent h3{
+    color: gray;
+}
+
+.postContent p{
+    color: gray;
+}

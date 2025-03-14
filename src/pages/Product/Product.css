@@ -1,0 +1,90 @@
+.food-display {
+  margin-top: 30px;
+}
+.food-display h2 {
+  font-size: max(2vw, 24px);
+  font-weight: 600;
+}
+.food-display-list {
+  display: grid;
+  width: 1200px;
+  animation: fadeIn 1s;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 30px;
+  gap: 30px;
+  row-gap: 40px;
+}
+.keyfeatura-container {
+  cursor: pointer;
+  padding: 10px 0;
+}
+#catename{
+    margin-left: 40px;
+    font-weight: 300;
+    font-size: 15px;
+    margin: 10px;
+    cursor: pointer;
+}
+#asasas23{
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+#asasas {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80px;
+  height: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#inputRang {
+  align-items: center;
+  gap: 5px;
+  display: flex;
+}
+#priceRange {
+  background: antiquewhite;
+}
+.keyfeatura-header {
+  display: grid;
+}
+.keyfeatura-header p {
+  font-size: 20px;
+  font-weight: 400;
+}
+.keyfeatura-text {
+  margin-top: 10px;
+  line-height: 1.5;
+}
+hr {
+  border: none;
+  border-top: 1.5px solid #eae9e5;
+  margin: 20px 0;
+  width: 100%;
+  opacity: 2;
+}
+.aText {
+  display: flex;
+  gap: 20px;
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+#sidebarProduct {
+  display: flex;
+  gap: 20px;
+}
+#sideBar {
+  width: 300px;
+  border-right: 2px solid #eae9e5; /* Độ dày và màu sắc */
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
