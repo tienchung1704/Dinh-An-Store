@@ -12,17 +12,17 @@ const Navbar = ({ setShowLogin }) => {
     localStorage.removeItem("token");
     setTimeout(() => {
       setToken("");
-      navigate("/");
+      navigate("/Cattie-Store-v2");
     }, 0);
   };
   return (
     <div className="navbar">
-      <Link to="/">
+      <Link to="/Cattie-Store-v2">
         <img src={assets.logo} className="logo" />
       </Link>
       <ul className="navbar-menu">
         <Link
-          to="/"
+          to="/Cattie-Store-v2"
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
