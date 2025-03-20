@@ -6,7 +6,7 @@ import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
 import Posts from "../../components/Posts/Posts";
 import ContactForm from "../../components/Contact/Contact"
 import VideoSlide from "../../components/VideoSlide/VideoSlide";
-import FacebookBtn from "../../components/FacebookBtn/FacebookBtn";
+import TheBrand from "../../components/TheBrand/TheBrand";
 const Home = () => {
   const [category, setCategory] = useState("All");
 
@@ -15,7 +15,6 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <FacebookBtn />
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category} />
       <VideoSlide />
@@ -23,8 +22,7 @@ const Home = () => {
       <Posts/>
       <ContactForm />
       </div>
-
-
+      <TheBrand />
     </div>
   );
 };

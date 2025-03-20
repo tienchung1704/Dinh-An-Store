@@ -7,23 +7,11 @@
 }
 .food-display-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   margin-top: 30px;
   gap: 30px;
   row-gap: 50px;
-  animation: appear linear;
-  animation-range: entry 0% 40%;
-  animation-timeline: view();
-}
-
-@keyframes appear {
-  from{
-    opacity: 0;
-    scale: 0.5;
-  }
-  to{
-    opacity: 1;
-    scale: 1;
-  }
 
 }
+
+

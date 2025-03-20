@@ -66,11 +66,25 @@ import heart from './heart.png'
 import red_heart from './red_heart.png'
 import gmail from './gmail.png'
 import close from './close.png'
+import item1 from  './item1.jpg'
+import item2 from  './item2.jpg'
+import item3 from  './item3.jpg'
+import item4 from  './item4.jpg'
+import item5 from  './item5.jpg'
+import item6 from  './item6.jpg'
+
+
 import arrow_down from './arrow-down.png'
 
 export const assets = {
     padlock,
     gmail,
+    item1,
+    item2,
+    item3,
+    item4,
+    item5,
+    item6,
     arrow_down,
     close,
     heart,

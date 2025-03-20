@@ -98,6 +98,8 @@
   margin-bottom: -50px;
   margin-left: 550px;
   cursor: pointer;
+  animation: fadeIn 2s;
+
 }
 .header-contents button:hover{
   transform: scale(1.15);

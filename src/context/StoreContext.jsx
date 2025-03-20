@@ -1,5 +1,4 @@
 import axios from "axios";
-import { use } from "react";
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 export const StoreContext = createContext(null);
@@ -40,10 +39,8 @@ const StoreContextProvider = (props) => {
   };
 
   useEffect(() => {
-    console.log("State productDetail đã thay đổi:", productDetail);
-
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems,productDetail]);
+  }, [cartItems]);
 
   const removeFromCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
@@ -90,7 +87,7 @@ const StoreContextProvider = (props) => {
           console.warn(
             `Product with ID ${item} not found in food_list. Marking it for removal.`
           );
-          invalidItems.push(item); // Thêm ID sản phẩm không hợp lệ vào danh sách
+          invalidItems.push(item); 
           if (invalidItems.length > 0) {
             invalidItems.forEach((itemId) => removeFromCart(itemId));
           }

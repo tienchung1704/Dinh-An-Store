@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Navbar from "./components/Navbar/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -15,6 +15,7 @@ import ProductDisplay from "./pages/Product/Product";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+  
   return (
     <>
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
@@ -22,7 +23,7 @@ const App = () => {
         <ToastContainer />
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
-          <Route path="/Cattie-Store-v2" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/verify" element={<Verify />} />

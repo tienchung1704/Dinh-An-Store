@@ -30,13 +30,19 @@ const ContactForm = () => {
       phoneContact: data.phoneContact,
       detailContact: data.detailContact,
 
-
     };
     let response = await axios.post(url + "/api/contact/add", contactData, {
       headers: { token },
     });
     if (response.data.success) {
       toast.success(response.data.message);
+      setData({
+        firstnameContact: "",
+        lastnameContact: "",
+        emailContact: "",
+        phoneContact: "",
+        detailContact: "",
+    })
     } else {
       toast.error(response.data.message);
     }

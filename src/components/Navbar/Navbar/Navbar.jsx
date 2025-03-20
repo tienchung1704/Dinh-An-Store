@@ -12,17 +12,17 @@ const Navbar = ({ setShowLogin }) => {
     localStorage.removeItem("token");
     setTimeout(() => {
       setToken("");
-      navigate("/Cattie-Store-v2");
+      navigate("/");
     }, 0);
   };
   return (
     <div className="navbar">
-      <Link to="/Cattie-Store-v2">
+      <Link to="/">
         <img src={assets.logo} className="logo" />
       </Link>
       <ul className="navbar-menu">
         <Link
-          to="/Cattie-Store-v2"
+          to="/"
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
@@ -58,15 +58,6 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className="navbar-right">
-        <div className="InputContainer">
-          <input
-            placeholder="Search.."
-            id="input"
-            className="input"
-            name="text"
-            type="text"
-          />
-        </div>{" "}
         <div className="navbar-search-icon">
           <Link to="/cart">
             <img src={assets.basket_icon} />
@@ -97,8 +88,7 @@ const Navbar = ({ setShowLogin }) => {
           </div>
         )}
       </div>
-      </div>
-      
+    </div>
   );
 };
 
