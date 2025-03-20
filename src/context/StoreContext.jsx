@@ -53,6 +53,13 @@ const StoreContextProvider = (props) => {
     }
   };
 
+  const updateCartItemQuantity = (itemId, quantity) => {
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: quantity > 0 ? quantity : 1, 
+    }));
+  };
+
   const fetchFoodList = async () => {
     const response = await axios.get(url + "/api/food/list");
     setFoodList(response.data.data);
@@ -87,7 +94,7 @@ const StoreContextProvider = (props) => {
           console.warn(
             `Product with ID ${item} not found in food_list. Marking it for removal.`
           );
-          invalidItems.push(item); 
+          invalidItems.push(item);  
           if (invalidItems.length > 0) {
             invalidItems.forEach((itemId) => removeFromCart(itemId));
           }
@@ -117,6 +124,7 @@ const StoreContextProvider = (props) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
+    updateCartItemQuantity,
     url,
     token,
     setToken,
