@@ -13,7 +13,7 @@ const TheBrand = () => {
   ];
 
   return (
-    <div>
+    <div className="thebrand">
       <h1>The brand</h1>
       <div id="wrapper">
         <div className="slider">

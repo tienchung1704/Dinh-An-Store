@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./LoginPopup.css";
+import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 
 const LoginPopup = ({ setShowLogin }) => {
-  const { url, setToken } = useContext(StoreContext);
+  const navigate = useNavigate();
+  const { url, setToken, user, setUser } = useContext(StoreContext);
   const [currState, setCurrState] = useState("Sign Up");
   const [data, setData] = useState({ name: "", email: "", password: "" });
   
@@ -26,6 +28,8 @@ const LoginPopup = ({ setShowLogin }) => {
     try {
       const response = await axios.post(newUrl, data);
     if (response.data.success) {
+      localStorage.setItem("user", response.data.data); 
+      setUser(response.data.data);
       setToken(response.data.token);
       localStorage.setItem("token", response.data.token);
       setShowLogin(false);
@@ -34,7 +38,6 @@ const LoginPopup = ({ setShowLogin }) => {
     }
     } catch (error) {
       alert("Đã xảy ra lỗi, vui lòng thử lại.");
-      console.error(error); 
     }
 
 

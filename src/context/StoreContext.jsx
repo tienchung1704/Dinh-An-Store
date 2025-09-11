@@ -4,22 +4,21 @@ import { toast } from "react-toastify";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
+  const [user, setUser] = useState("");
   const [cartItems, setCartItems] = useState({});
   const url = "http://localhost:4000";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
   const [productDetail, setProductDetail] = useState([]);
 
-
   const getItemDetail = async (itemId) => {
-    try{
+    try {
       const response = await axios.get(`${url}/api/food/${itemId}`);
-      setProductDetail(response.data.data)
-
-    }catch(err){
+      setProductDetail(response.data.data);
+    } catch (err) {
       console.error("Lỗi khi lấy thông tin sản phẩm:", err);
     }
-  }
+  };
 
   const addToCart = async (itemId) => {
     if (token) {
@@ -33,7 +32,8 @@ const StoreContextProvider = (props) => {
         { itemId },
         { headers: { token } }
       );
-    }else{
+      return token;
+    } else {
       toast.warn("For the best experience, we suggest that you log in first.");
     }
   };
@@ -50,22 +50,23 @@ const StoreContextProvider = (props) => {
         { itemId },
         { headers: { token } }
       );
+      return token;
     }
   };
 
   const updateCartItemQuantity = (itemId, quantity) => {
-    setCartItems((prev) => ({
-      ...prev,
-      [itemId]: quantity > 0 ? quantity : 1, 
-    }));
+    if (token) {
+      setCartItems((prev) => ({
+        ...prev,
+        [itemId]: quantity > 0 ? quantity : 1,
+      }));
+    }
   };
 
   const fetchFoodList = async () => {
     const response = await axios.get(url + "/api/food/list");
     setFoodList(response.data.data);
   };
-
-
 
   const loadCartData = async (token) => {
     try {
@@ -74,7 +75,6 @@ const StoreContextProvider = (props) => {
         {},
         { headers: { token } }
       );
-      console.log("Cart data loaded:", response.data.cartData);
       setCartItems(response.data.cartData || []);
     } catch (error) {
       console.error("Error loading cart data:", error);
@@ -82,9 +82,7 @@ const StoreContextProvider = (props) => {
   };
   const getTotalCartAmount = () => {
     let totalAmount = 0;
-    // Lưu trữ các ID sản phẩm không hợp lệ
     const invalidItems = [];
-
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         const itemInfo = food_list.find((product) => product.id === item);
@@ -94,23 +92,26 @@ const StoreContextProvider = (props) => {
           console.warn(
             `Product with ID ${item} not found in food_list. Marking it for removal.`
           );
-          invalidItems.push(item);  
+          invalidItems.push(item);
           if (invalidItems.length > 0) {
             invalidItems.forEach((itemId) => removeFromCart(itemId));
           }
         }
       }
     }
-
     return totalAmount;
   };
 
   useEffect(() => {
     async function loadData() {
       await fetchFoodList();
+      const storedUser = localStorage.getItem("user");
       if (localStorage.getItem("token")) {
         setToken(localStorage.getItem("token"));
         await loadCartData(localStorage.getItem("token"));
+      }
+      if (storedUser) {
+        setUser(storedUser);
       }
     }
     loadData();
@@ -126,6 +127,8 @@ const StoreContextProvider = (props) => {
     getTotalCartAmount,
     updateCartItemQuantity,
     url,
+    setUser,
+    user,
     token,
     setToken,
   };

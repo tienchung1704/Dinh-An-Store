@@ -10,11 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/genai": "^0.7.0",
+    "@google/generative-ai": "^0.24.0",
     "axios": "^1.7.2",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-facebook": "^9.0.12",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^6.23.1",
     "react-toastify": "^11.0.5"
   },

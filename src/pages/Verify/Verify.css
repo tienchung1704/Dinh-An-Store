@@ -3,6 +3,7 @@
     width: 120px;
     height: 90px;
     margin: 0 auto;
+    margin-top: 200px;
   }
   
   .loader:before {

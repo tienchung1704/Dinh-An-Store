@@ -32,16 +32,20 @@
   .videoSlide-contents h2 {
     font-size: max(4.5vw, 22px);
     font-weight: bold;
+    text-shadow: 2px 4px 5px rgba(102, 174, 246, 0.792);
+
   }
   
   .videoSlide-contents p {
     font-size: 1vw;
+    text-shadow: 2px 4px 5px rgba(102, 174, 246, 0.792);
   }
   
   .videoSlide-contents button {
     border: none;
     color: white;
     font-weight: 600;
+    text-shadow: 2px 4px 5px rgba(102, 174, 246, 0.792);
     padding: 1vw 2.3vw;
     background-color: rgba(0, 0, 0, 0.5);
     font-size: max(1vw, 13px);

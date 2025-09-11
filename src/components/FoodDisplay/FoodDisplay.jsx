@@ -16,7 +16,7 @@ const FoodDisplay = ({ category }) => {
               <FoodItem
                 key={index}
                 id={item.id}
-                name={item.name}
+                name={item.name.length > 15 ? item.name.substring(0,15) + "..." : item.name}
                 description={
                   item.description.length > 20
                     ? item.description.substring(0, 20) + "..."

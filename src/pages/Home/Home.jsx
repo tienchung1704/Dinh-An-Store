@@ -10,8 +10,6 @@ import TheBrand from "../../components/TheBrand/TheBrand";
 const Home = () => {
   const [category, setCategory] = useState("All");
 
-
-
   return (
     <div>
       <Header />

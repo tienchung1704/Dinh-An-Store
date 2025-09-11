@@ -8,9 +8,19 @@
   align-items: center;
   animation: fadeIn 1s;
   border-radius: 12px;
-  background-color: rgb(225, 239, 245); /* Đảm bảo navbar có màu nền */
-  position: fixed; /* Cố định navbar trên màn hình */
-  z-index: 1000; /* Đảm bảo navbar nằm trên các phần khác */
+  background-color: rgb(225, 239, 245); 
+  position: fixed; 
+  z-index: 1000; 
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.2);
+}
+#navbarText1{
+  font-size: 30px;
+  color: #49557e;
+  font-weight: 600;
+  margin-left: 20px;
+  position: relative;
+  left: 200px;
+  text-shadow: 4px 2px 0px rgba(77, 218, 249, 0.829);
 }
 
 @keyframes fadeIn {
@@ -32,10 +42,27 @@
 .navbar-menu {
   display: flex;
   list-style: none;
+  position: fixed;
   gap: 20px;
-  color: #49557e;
+  left: 800px;
+  color: rgba(0, 0, 0, 0.792);
   font-size: 22px;
   transition: all 0.3s ease;
+}
+.userName{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: end;
+  width: 300px;
+  text-decoration: underline;
+
+}
+.userNamerR{
+  display: flex;
+}
+#userNamerRP{
+  text-decoration: none;
 }
 .navbar-right {
   display: flex;
@@ -47,12 +74,15 @@
   background: transparent;
   font-size: 16px;
   color: black;
-  border: 2px solid lightblue;
-  background-color: lightblue;
-  padding: 10px 25px;
-  border-radius: 30px;
+  background-color: rgb(225, 239, 245);
+  padding: 10px;
+  width: 100px;
+  border: 1px solid lightblue;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;}
+  margin-right: 40px;
+  transition: all 0.3s ease;
+}
 
 .navbar button:hover {
   background-color: #fff4f2;
@@ -75,10 +105,10 @@
   position: absolute;
   min-width: 10px;
   min-height: 10px;
-  background-color: tomato;
+  background-color: lightblue;
   border-radius: 5px;
   top: -8px;
-  right: -8px;
+  right: 0;
 }
 
 .navbar-profile {

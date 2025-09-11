@@ -12,9 +12,11 @@ import MyOrder123 from "./pages/MyOrder123/MyOrder123";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProductDisplay from "./pages/Product/Product";
+import GeminiChat from "./components/CatBot/GeminiChat";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
+    const [category, setCategory] = useState("All");
   
   return (
     <>
@@ -29,9 +31,10 @@ const App = () => {
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders" element={<MyOrder123 />} />
           <Route path="/account" element={<ChangePassword />} />
-          <Route path="/product" element={<ProductDisplay />} />
+          <Route path="/product" element={<ProductDisplay category={category} setCategory={setCategory} />} />
         </Routes>
       </div>
+      <GeminiChat />
       <Footer />
     </>
   );

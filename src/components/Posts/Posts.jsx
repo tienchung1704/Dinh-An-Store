@@ -12,7 +12,6 @@ const Posts = () => {
   const fetchPost = async () => {
     const response = await axios.get(`${url}/api/post/list`);
     if (response.data.success) {
-      console.log(response.data.data);
       setPost(response.data.data);
     } else {
       toast.error("Error");

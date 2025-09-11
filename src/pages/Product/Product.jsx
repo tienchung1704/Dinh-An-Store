@@ -5,9 +5,8 @@ import { assets } from "../../assets/assets";
 import { menu_list } from "../../assets/assets";
 import ProductItem from "../../components/ProductItem/ProductItem";
 
-const ProductDisplay = ({ category }) => {
+const ProductDisplay = ({ category,setCategory }) => {
   const { food_list } = useContext(StoreContext);
-  const [isKeyFeature, setIsKeyFeature] = useState(false);
   const [minValue, setMinValue] = useState(99);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
@@ -41,6 +40,9 @@ const ProductDisplay = ({ category }) => {
           <a href="/">Home</a>
           <p>/</p>
           <a href="/">Collection</a>
+        </div>
+        <div className="btExt">
+          <p>Featured Items</p>
         </div>
         <div className="input-wrapper">
           <button className="icon">
@@ -96,12 +98,12 @@ const ProductDisplay = ({ category }) => {
                     <div key={item.menu_name} className="cateconta">
                       <p
                         id="catename"
-                        className={
-                          selectedCategory === item.menu_name ? "active" : ""
-                        }
+                        className={`cateconta ${selectedCategory === item.menu_name ? "active" : ""}`}
                         onClick={() => {
-                          setSelectedCategory(item.menu_name);
-                          setCurrentPage(1); // Reset về trang 1 khi đổi danh mục
+                          const newCategory = item.menu_name;
+                          setCategory((prev) => (prev === newCategory ? "All" : newCategory));
+                          setSelectedCategory((prev) => (prev === newCategory ? "All" : newCategory));
+                          setCurrentPage(1);
                         }}
                       >
                         {item.menu_name}
@@ -113,11 +115,7 @@ const ProductDisplay = ({ category }) => {
             </div>
             <div id="asasas">
               <p id="descriptionP">Price</p>
-              <img
-                src={assets.arrow_down}
-                className={`arrow ${isKeyFeature ? "open" : ""}`}
-                alt=""
-              />
+
             </div>
 
             <div id="inputRang">
@@ -126,7 +124,7 @@ const ProductDisplay = ({ category }) => {
                 value={minValue}
                 onChange={(e) => {
                   setMinValue(Number(e.target.value));
-                  setCurrentPage(1); // Reset về trang 1 khi đổi giá
+                  setCurrentPage(1); 
                 }}
                 min={0}
                 max={99}
@@ -142,7 +140,7 @@ const ProductDisplay = ({ category }) => {
             <ProductItem
               key={item.id}
               id={item.id}
-              name={item.name}
+              name={item.name.length > 9 ? item.name.substring(0,9) + "..." : item.name}
               description={
                 item.description.length > 20
                   ? item.description.substring(0, 20) + "..."

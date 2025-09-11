@@ -1,5 +1,6 @@
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
+import img_12 from './circle.png'
 import header_img from './header_img.png'
 import header_img2 from './header_image2.png'
 import left_arrow from './left_arrow.png'
@@ -57,6 +58,7 @@ import twitter_icon from './twitter_icon.png'
 import cross_icon from './cross_icon.png'
 import selector_icon from './selector_icon.png'
 import rating_starts from './rating_starts.png'
+import closeaa from './close123.png'
 import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import padlock from'./padlock.png'
@@ -71,14 +73,16 @@ import item2 from  './item2.jpg'
 import item3 from  './item3.jpg'
 import item4 from  './item4.jpg'
 import item5 from  './item5.jpg'
+import userimg from  './user.png'
 import item6 from  './item6.jpg'
-
-
 import arrow_down from './arrow-down.png'
 
 export const assets = {
     padlock,
+    img_12,
+    userimg,
     gmail,
+    closeaa,
     item1,
     item2,
     item3,
@@ -124,7 +128,7 @@ export const menu_list = [
         menu_image: menu_2
     },
     {
-        menu_name: "For Cats    ",
+        menu_name: "For Cats",
         menu_image: menu_3
     },
     {

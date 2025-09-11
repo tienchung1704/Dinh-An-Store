@@ -19,15 +19,8 @@ const ChangePassword = () => {
     setData((data) => ({ ...data, [name]: value }));
   };
 
-  useEffect(() => {
-    if (token) {
-      console.log("datauser",data)
-    }
-  }, [token, data]);
-
   const sendRequest = async (event) => {
     event.preventDefault(); 
-
     if (data.newpassword !== data.rewritepassword && data.password.length < 8) {
         toast.error("New password and rewrite password do not match!");
         return;

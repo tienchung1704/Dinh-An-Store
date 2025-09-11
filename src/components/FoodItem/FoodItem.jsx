@@ -27,11 +27,6 @@ const FoodItem = ({ id, name, image, description, price , isTrending}) => {
   const handleSearchClick = async () => {
     await getItemDetail(id);
   };
-  useEffect(() => {
-    if (productDetail) {
-      console.log("State productDetail đã thay đổi:", productDetail);
-    }
-  }, [productDetail]);
 
   return (
     <div>
@@ -80,7 +75,7 @@ const FoodItem = ({ id, name, image, description, price , isTrending}) => {
         </div>
         <div className="food-item-info">
           <div className="food-item-name-rating">
-            <p>{name}</p>
+            <p data-name={name}>{name}</p>
             <div id="imgsearchandheart">
               <img
                 id="imgHeart"

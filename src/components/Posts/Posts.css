@@ -23,3 +23,7 @@
 .postContent p{
     color: gray;
 }
+.posts h1{
+    text-shadow: 4px 2px 0px rgba(77, 218, 249, 0.829);
+    margin-bottom: 20px;
+}

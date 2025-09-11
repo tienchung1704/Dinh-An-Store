@@ -5,8 +5,9 @@
   background-color: whitesmoke;
   border-radius: 8px;
 }
-h1{
+.contact h1{
     margin-bottom: 15px;
+    text-shadow: 4px 2px 0px rgba(77, 218, 249, 0.829);
 }
 .contact {
     justify-content: end;

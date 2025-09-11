@@ -18,9 +18,7 @@ const ContactForm = () => {
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
   };
-  useEffect(() => {
-    console.log("data", data);
-  }, [data]);
+
   const sendContact = async (event) => {
     event.preventDefault(); 
     let contactData = {
