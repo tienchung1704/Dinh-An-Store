@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import "./GeminiChat.css";
 import ReactMarkdown from "react-markdown";
 const GeminiChat = () => {
-  const GEMINI_API_KEY = "AIzaSyBlzzFgohvAIS4lXbXZKxrChlr-oUrCvyk";
+  const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
   const ai = new GoogleGenerativeAI(GEMINI_API_KEY);
   const model = ai.getGenerativeModel({ model: "gemini-2.0-flash-001" });
 

@@ -66,6 +66,13 @@
 .logo{
   width: 130px;
 }
+.footer-copyright{
+  font-size: 12px;
+  color: grey;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 900px;
+}
 
 li{
   font-weight: 2  00;

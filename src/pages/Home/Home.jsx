@@ -4,7 +4,7 @@ import Header from "../../components/Navbar/Header/Header";
 import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
 import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
 import Posts from "../../components/Posts/Posts";
-import ContactForm from "../../components/Contact/Contact"
+import ContactForm from "../../components/Contact/Contact";
 import VideoSlide from "../../components/VideoSlide/VideoSlide";
 import TheBrand from "../../components/TheBrand/TheBrand";
 const Home = () => {
@@ -12,15 +12,16 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
+      <VideoSlide />
+      {/* <Header /> */}
+      <TheBrand />
+
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category} />
-      <VideoSlide />
       <div className="yeyeye">
-      <Posts/>
-      <ContactForm />
+        <Posts />
+        <ContactForm />
       </div>
-      <TheBrand />
     </div>
   );
 };

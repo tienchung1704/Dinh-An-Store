@@ -1,5 +1,5 @@
 import basket_icon from './basket_icon.png'
-import logo from './logo.png'
+import logo from './1222.png'
 import img_12 from './circle.png'
 import header_img from './header_img.png'
 import header_img2 from './header_image2.png'
@@ -120,27 +120,27 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Cat Trees",
+        menu_name: "Balo",
         menu_image: menu_1
     },
     {
-        menu_name: "Fall Arrivals",
+        menu_name: "Badminton Apparel",
         menu_image: menu_2
     },
     {
-        menu_name: "For Cats",
+        menu_name: "Racket Bags",
         menu_image: menu_3
     },
     {
-        menu_name: "Gift Guide",
+        menu_name: "Stringing Machines",
         menu_image: menu_4
     },
     {
-        menu_name: "Apparel",
+        menu_name: "Accessories",
         menu_image: menu_5
     },
     {
-        menu_name: "Print Your Pet",
+        menu_name: "Young",
         menu_image: menu_6
     }]
 

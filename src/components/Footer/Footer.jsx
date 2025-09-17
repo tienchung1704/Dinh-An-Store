@@ -6,7 +6,6 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logo} className="logo" alt="" />
           <p></p>
         </div>
         <div className="footer-content-center">
@@ -36,7 +35,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="footer-copyright">
-        Copyright 2025@ meowington - All Rights Reserved
+       © Copyright 2021 Badminton World Federation. All rights reserved. The content of this website is the property of BWF or used under licence by BWF. No part may be copied, republished, stored, or otherwise republished or transmitted without the prior written permission of BWF. For further information, please refer to our
       </p>
     </div>
   );

@@ -19,7 +19,7 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="navbar">
       <Link to="/">
-        <h2 id="navbarText1">Cattie Store</h2>
+        <h2 id="navbarText1">Dinh An Store</h2>
       </Link>
       <ul className="navbar-menu">
         <Link
