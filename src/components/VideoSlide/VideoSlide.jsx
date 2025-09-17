@@ -10,7 +10,7 @@ const VideoSlide = () => {
         Trình duyệt của bạn không hỗ trợ video.
       </video>
       <div className="videoSlide-contents">
-        <h2>Spoil Your Cat</h2>
+        <h2>Explore our store</h2>
         <p>Without spoiling your home decor</p>
         <button>
           {" "}
